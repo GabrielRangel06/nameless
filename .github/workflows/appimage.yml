@@ -1,4 +1,4 @@
-name: AppImage
+name: appimage
 
 on:
   push:
