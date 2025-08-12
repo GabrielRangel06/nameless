@@ -6,7 +6,7 @@ AppDir:
     id: org.luanti.luanti
     name: Luanti
     icon: luanti
-    version: !ENV ${VERSION}
+    version: 5.12.0
     exec: usr/bin/luanti
     exec_args: $@
   files:
