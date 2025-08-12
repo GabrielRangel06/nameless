@@ -51,10 +51,9 @@ script: |
     # Compile and install binaries into AppDir
     cmake -B appimage-build -DENABLE_REDIS=FALSE -DENABLE_POSTGRESQL=OFF -DCMAKE_INSTALL_PREFIX=AppDir/usr/ -DBUILD_SERVER=FALSE -DENABLE_GETTEXT=TRUE -DCMAKE_BUILD_TYPE=Release -DRUN_IN_PLACE=FALSE
     cmake --build appimage-build --parallel $(nproc) --config Release
-    cmake --install appimage-build
-
     mkdir -p AppDir/usr/bin
-    cp appimage-build/bin/cloakv4 AppDir/usr/bin/luanti
+    cp appimage-build/src/cloakv4 AppDir/usr/bin/luanti
+    cmake --install appimage-build
 
     # Is a backup icon location in case
     mkdir -p AppDir/usr/share/luanti/misc
