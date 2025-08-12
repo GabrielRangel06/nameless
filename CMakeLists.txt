@@ -297,6 +297,12 @@ endif()
 
 add_subdirectory(lib/tiniergltf)
 
+if(UNIX AND NOT APPLE AND BUILD_CLIENT)
+    install(TARGETS ${PROJECT_NAME}
+        RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+    )
+endif()
+
 # Subdirectories
 # Be sure to add all relevant definitions above this
 add_subdirectory(src)
